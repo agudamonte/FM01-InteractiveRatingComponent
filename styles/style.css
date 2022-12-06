@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Overpass', sans-serif;
+  color: var(--white);
+}
+
+a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --medium-blue:#252E37;
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --regular: 400;
+  --bold: 700;
+
+}
+
+body{
+  background-color: var(--very-dark-blue);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-content: center;
+}
+
+.main-container {
+  max-width: 350px;
+  min-width: 350px;
+  height: auto;
+  background-image: linear-gradient(to right bottom, #141519, #191b20, #1e2228, #222830, #262f38);
+  display: grid;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.main-img {
+  margin: 0;
+  padding: 0;
+  background-color: var(--medium-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("/images/icon-star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-weight: var(--bold);
+  font-size: 2.5rem;
+}
+
+.main-p {
+  font-size: 1.5rem;
+  color: var(--light-grey);
+}
+
+.rates-level-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  user-select: none;
+}
+
+.rate {
+  display: flex;
+  cursor: pointer;
+  background-color: var(--medium-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate:hover {
+  background-color: var(--light-grey);
+}
+
+.rate:active, .selected {
+  background-color: var(--orange);
+  color: var(--white);
+  
+}
+
+.submit-button{
+  height: 40px;
+  background-color: var(--orange);
+  border-radius: 30px ;
+  letter-spacing: 0.3rem;
+  font-weight: var(--bold);
+  color: var(--white);
+}
+
+.main-button-submit:hover{
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+/* SUBMIT PAGE STYLES */
+
+.submit-img {
+  background-image: url('/images/illustration-thank-you.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: auto;
+  height: 200px;
+}
+
+.main-submitted {
+  text-align: center;
+}
+
+.rate-submitted {
+  color: var(--orange);
+  background-color: var(--medium-blue);
+  font-size: 1.6rem;
+  height: 30px;
+  width: 65%;
+  border-radius: 20px;
+  margin: auto;
+  padding-top: 6px;
+  margin-bottom: 20px;
+}
+
+.inactivo {
+  visibility: unset;
+}
+
+@media (max-width: 600px) {
+  main {
+    max-width: 350px;
+    min-width: 350px;
+  }
+  
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  main {
+    width: 70%;
+    max-width: 800px;
+    min-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1201px) {
+  main {
+    max-width: 350px;
+    min-width: 350px;
+  }
+}
