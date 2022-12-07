@@ -17,7 +17,6 @@ function select(event) {
     cleanAlert();
   }
 }
-
 function submit(e) {
   if (rate !== "") {
     ratingState.classList.toggle("inactive");
@@ -28,14 +27,12 @@ function submit(e) {
   }
   errorMessage(e.target.parentElement);
 }
-
 function remove() {
   let selected = document.querySelector(".btn-selected");
   if (selected) {
     selected.classList.remove("btn-selected");
   }
 }
-
 function errorMessage(reference) {
   cleanAlert();
   const alertMessage = document.createElement("p");
@@ -43,7 +40,6 @@ function errorMessage(reference) {
   alertMessage.textContent = "Please rate us before submission";
   reference.append(alertMessage);
 }
-
 function cleanAlert() {
   alert = document.querySelector(".error");
   if (alert) {
