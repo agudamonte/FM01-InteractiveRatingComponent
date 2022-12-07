@@ -31,7 +31,7 @@ body{
 main{
   width: 350px;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 /** ---------------------- Section 1 Styles ---------------------- */
 .section1 {
@@ -80,15 +80,13 @@ main{
   align-items: center;
 }
 .section1__rates .btn-rate:hover {
+  background-color: var(--medium-grey);
+}
+.section1__rates .btn-rate:active{
   background-color: var(--orange);
 }
-/*! FIX HERE ---------------------------*/
-.section1__rates .btn-rate:active{
-  background-color: var(--medium-grey);
-}
-.section1__rates .btn-rate:focus{
-  background-color: var(--medium-grey);
-  background: var(--orange);
+.section1__rates .btn-selected{
+  background-color: var(--orange);
 }
 
 .section1__btn-submit{

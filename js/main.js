@@ -11,7 +11,9 @@ let rate = "";
 
 function select(event) {
   if (event.target.classList.contains("btn-rate")) {
+    remove();
     rate = event.target.textContent;
+    event.target.classList.add("btn-selected");
     cleanAlert();
   }
 }
@@ -25,6 +27,13 @@ function submit(e) {
     return;
   }
   errorMessage(e.target.parentElement);
+}
+
+function remove() {
+  let selected = document.querySelector(".btn-selected");
+  if (selected) {
+    selected.classList.remove("btn-selected");
+  }
 }
 
 function errorMessage(reference) {
