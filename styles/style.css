@@ -3,20 +3,15 @@
   border: 0;
   padding: 0;
 }
-
 html {
   font-size: 62.5%;
   font-family: 'Overpass', sans-serif;
   color: var(--white);
 }
-
-a{
-  text-decoration: none;
-  color: var(--white);
-}
-
 :root {
+  /*  Primary */
   --orange: hsl(25, 97%, 53%);
+  /* Neutral */
   --white: hsl(0, 0%, 100%);
   --light-grey: hsl(217, 12%, 63%);
   --medium-grey: hsl(216, 12%, 54%);
@@ -25,20 +20,22 @@ a{
   --very-dark-blue: hsl(216, 12%, 8%);
   --regular: 400;
   --bold: 700;
-
 }
-
 body{
   background-color: var(--very-dark-blue);
-  display: grid;
-  width: 100vw;
   height: 100vh;
+  display: grid;
   place-content: center;
+  margin: 0;
 }
-
-.main-container {
-  max-width: 350px;
-  min-width: 350px;
+main{
+  width: 350px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+/** ---------------------- Section 1 Styles ---------------------- */
+.section1 {
+  /* min-width: 350px; */
   height: auto;
   background-image: linear-gradient(to right bottom, #141519, #191b20, #1e2228, #222830, #262f38);
   display: grid;
@@ -46,9 +43,8 @@ body{
   padding: 20px;
 }
 
-.main-img {
+.section1__content-starImg {
   margin: 0;
-  padding: 0;
   background-color: var(--medium-blue);
   width: 40px;
   height: 40px;
@@ -56,27 +52,24 @@ body{
   background-image: url("/images/icon-star.svg");
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 20px;
 }
-
-h1 {
+.section1__content h1 {
   font-weight: var(--bold);
   font-size: 2.5rem;
 }
-
-.main-p {
+.section1__content p {
   font-size: 1.5rem;
   color: var(--light-grey);
+  line-height: 2.1rem;
 }
 
-.rates-level-container {
+.section1__rates {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
   user-select: none;
 }
-
-.rate {
+.section1__rates .btn-rate {
   display: flex;
   cursor: pointer;
   background-color: var(--medium-blue);
@@ -86,18 +79,19 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
-.rate:hover {
-  background-color: var(--light-grey);
-}
-
-.rate:active, .selected {
+.section1__rates .btn-rate:hover {
   background-color: var(--orange);
-  color: var(--white);
-  
+}
+/*! FIX HERE ---------------------------*/
+.section1__rates .btn-rate:active{
+  background-color: var(--medium-grey);
+}
+.section1__rates .btn-rate:focus{
+  background-color: var(--medium-grey);
+  background: var(--orange);
 }
 
-.submit-button{
+.section1__btn-submit{
   display: flex;
   height: 40px;
   background-color: var(--orange);
@@ -108,15 +102,32 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-
-.submit-button:hover{
+.section1__btn-submit:hover{
   background-color: var(--white);
   color: var(--orange);
 }
 
-/* SUBMIT PAGE STYLES */
+.error {
+  background-color: red;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  height: 20px;
+  width: auto;
+  text-align: center;
+  margin: 20px 0px 0px 0px
+}
 
-.submit-img {
+/** ---------------------- Section 2 Styles ---------------------- */
+.section2 {
+  text-align: center;
+  min-width: 350px;
+  height: auto;
+  background-image: linear-gradient(to right bottom, #141519, #191b20, #1e2228, #222830, #262f38);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.section2__content-img {
   background-image: url('/images/illustration-thank-you.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -124,11 +135,17 @@ h1 {
   height: 200px;
 }
 
-.main-submitted {
-  text-align: center;
+.section2__content h1 {
+  font-weight: var(--bold);
+  font-size: 2.5rem;
+}
+.section2__content p {
+  font-size: 1.5rem;
+  color: var(--light-grey);
+  line-height: 2.1rem;
 }
 
-.rate-submitted {
+.section2__rate{
   color: var(--orange);
   background-color: var(--medium-blue);
   font-size: 1.6rem;
@@ -140,30 +157,17 @@ h1 {
   margin-bottom: 20px;
 }
 
-.inactivo {
-  visibility: unset;
+.inactive {
+  display: none;
 }
 
-@media (max-width: 600px) {
-  main {
-    max-width: 350px;
-    min-width: 350px;
-  }
-  
+/** ---------------------- Attribution Styles ----------------------  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 601px) and (max-width: 1200px) {
-  main {
-    width: 70%;
-    max-width: 800px;
-    min-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1201px) {
-  main {
-    max-width: 350px;
-    min-width: 350px;
-  }
-}
+/*! ---------------------- @media Queries ----------------------  */
