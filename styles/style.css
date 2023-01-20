@@ -28,6 +28,7 @@ body{
   place-content: center;
   margin: 0;
 }
+
 main{
   width: 350px;
   margin: auto;
@@ -35,7 +36,7 @@ main{
 }
 /** ---------------------- Section 1 Styles ---------------------- */
 .section1 {
-  /* min-width: 350px; */
+  /* max-width: 100; */
   height: auto;
   background-image: linear-gradient(to right bottom, #141519, #191b20, #1e2228, #222830, #262f38);
   display: grid;
@@ -69,7 +70,15 @@ main{
   margin: 20px 0;
   user-select: none;
 }
+
+.section1__rates .btn-rate::before{
+  content: attr(value);
+  position: absolute;
+}
+
 .section1__rates .btn-rate {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: flex;
   cursor: pointer;
   background-color: var(--medium-blue);
@@ -78,16 +87,22 @@ main{
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  outline: none;
 }
-.section1__rates .btn-rate:hover {
-  background-color: var(--medium-grey);
+
+.section1__rates .btn-rate:checked {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--orange);
+  border-color: var(--orange);
 }
-.section1__rates .btn-rate:active{
+
+.section1__rates .btn-rate:hover{
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background-color: var(--orange);
 }
-.section1__rates .btn-selected{
-  background-color: var(--orange);
-}
+
 
 .section1__btn-submit{
   display: flex;
@@ -100,16 +115,14 @@ main{
   align-items: center;
   justify-content: center;
 }
-.section1__btn-submit:hover{
-  background-color: var(--white);
-  color: var(--orange);
-}
 
 .error {
+  display: grid;
+  place-content: center;
   background-color: red;
   border-radius: 10px;
   font-size: 1.6rem;
-  height: 20px;
+  height: 40px;
   width: auto;
   text-align: center;
   margin: 20px 0px 0px 0px
@@ -126,11 +139,9 @@ main{
 }
 
 .section2__content-img {
-  background-image: url('/images/illustration-thank-you.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  margin: 50px;
   width: auto;
-  height: 200px;
+  height: auto;
 }
 
 .section2__content h1 {
@@ -168,3 +179,8 @@ main{
   color: hsl(228, 45%, 44%);
 }
 /*! ---------------------- @media Queries ----------------------  */
+@media (max-width:600px) {
+  main{
+    width: 350px;
+  }
+}

@@ -4,45 +4,43 @@ const rates = document.querySelector("#rates");
 const rateSelected = document.querySelector("#rate-selected");
 const submitBtn = document.querySelector("#btn-submit");
 
-rates.addEventListener("click", select);
+rates.addEventListener("click", selectPuntuation);
 submitBtn.addEventListener("click", submit);
 
-let rate = "";
+let rate = false;
 
-function select(event) {
-  if (event.target.classList.contains("btn-rate")) {
-    remove();
-    rate = event.target.textContent;
-    event.target.classList.add("btn-selected");
-    cleanAlert();
-  }
+function selectPuntuation(event) {
+    if (event.target.classList.contains("btn-rate")) {
+        rate = event.target.value;
+        cleanAlert();
+    }
 }
 function submit(e) {
-  if (rate !== "") {
-    ratingState.classList.toggle("inactive");
-    thankYouState.classList.toggle("inactive");
-    //
-    rateSelected.textContent = rate;
-    return;
-  }
-  errorMessage(e.target.parentElement);
+    if (rate) {
+        ratingState.classList.toggle("inactive");
+        thankYouState.classList.toggle("inactive");
+        //
+        rateSelected.textContent = rate;
+        rates.reset();
+        return;
+    }
+    printErrorMessage();
 }
-function remove() {
-  let selected = document.querySelector(".btn-selected");
-  if (selected) {
-    selected.classList.remove("btn-selected");
-  }
-}
-function errorMessage(reference) {
-  cleanAlert();
-  const alertMessage = document.createElement("p");
-  alertMessage.classList.add("error");
-  alertMessage.textContent = "Please rate us before submission";
-  reference.append(alertMessage);
+
+function printErrorMessage() {
+    cleanAlert();
+    let alertMessage = document.createElement("div");
+    alertMessage.classList.add("error");
+    alertMessage.textContent = "Please rate us before submission";
+    document.querySelector("#first-section").appendChild(alertMessage);
+
+    setTimeout(() => {
+        alertMessage.remove();
+    }, 2000);
 }
 function cleanAlert() {
-  alert = document.querySelector(".error");
-  if (alert) {
-    alert.remove();
-  }
+    alert = document.querySelector(".error");
+    if (alert) {
+        alert.remove();
+    }
 }
